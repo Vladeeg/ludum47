@@ -5,7 +5,7 @@ That's a game built for the LD47
 Controls are described in game, but here's the list if you need:
 
 * When in trouble, try to press [SPACE]
-* [X] - Attack
+* X - Attack
 * ARROW KEYS - move
 
 ## Playing
