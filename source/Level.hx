@@ -217,17 +217,19 @@ class Level extends FlxState
 				s.tutorialListened = true;
 				var phrases:Array<Dialog.Phrase> = [];
 				var dummyFairy = new Fairy(0, 0, 0);
+
+				if (s.run > 0 && s.nastyDealsDone() <= 0)
+				{
+					var dummyPlayer = new DummyPlayer(0, 0, 0);
+					phrases.push(new Dialog.Phrase(dummyPlayer, "There should be a way to escape..."));
+					phrases.push(new Dialog.Phrase(dummyPlayer, "Maybe I need to act a little... different?"));
+				}
 				phrases.push(new Dialog.Phrase(dummyFairy, "Hello, brave hero!\n\n(press [SPACE] to go to next phrase)"));
 				phrases.push(new Dialog.Phrase(dummyFairy, "I'll be your little advisor!"));
 				phrases.push(new Dialog.Phrase(dummyFairy, "You can use ARROW KEYS to move around."));
 				phrases.push(new Dialog.Phrase(dummyFairy, "We've got our princess kidnapped, and so we need your help to rescue her!"));
 				phrases.push(new Dialog.Phrase(dummyFairy, "Now go to the next room and listen to the old wiseacre!"));
 
-				if (s.run > 0 && s.nastyDealsDone() <= 0) {
-					var dummyPlayer = new DummyPlayer(0, 0, 0);
-					phrases.push(new Dialog.Phrase(dummyPlayer, "There should be a way to escape..."));
-					phrases.push(new Dialog.Phrase(dummyPlayer, "Maybe I need to act a little... different?"));
-				}
 				if (phrases.length > 0)
 				{
 					openSubState(new Dialog(phrases));
