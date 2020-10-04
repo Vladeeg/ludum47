@@ -65,6 +65,8 @@ class LoopState extends FlxState
 		StateFactory.getState().tutorialListened = false;
 		StateFactory.getState().swordTutorialListened = false;
 		StateFactory.getState().princessSaveText = false;
+		StateFactory.getState().playerHealth = 3;
+
 		super.create();
 	}
 
