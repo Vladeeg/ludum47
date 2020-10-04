@@ -66,6 +66,8 @@ class WinState extends FlxState {
             .add(Spoke, Close, Conditions.ended)
             .start(Speaking);
 
+        StateFactory.resetState();
+
 		super.create();
     }
 
